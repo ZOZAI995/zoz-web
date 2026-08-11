@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZOZ Web Studio | تصميم مواقع احترافية</title>
+
+<meta name="description"
+content="ZOZ Web Studio - تصميم مواقع ويب سريعة واحترافية ومتوافقة مع الهاتف.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    background:#070b14;
+    color:#fff;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+/* NAV */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(15px);
+    background:rgba(7,11,20,.85);
+    border-bottom:1px solid #202a40;
+}
+
+.nav-box{
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:#55e6ff;
+    font-size:25px;
+    font-weight:900;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:#d9e2f2;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#55e6ff;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    background:#55e6ff;
+    color:#061019;
+    padding:13px 24px;
+    border-radius:13px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(85,230,255,.25);
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    background:
+    radial-gradient(circle at 50% 20%,#173a63 0%,#070b14 55%);
+}
+
+.hero-content{
+    width:100%;
+}
+
+.badge{
+    display:inline-block;
+    border:1px solid #2b526b;
+    color:#55e6ff;
+    background:#0d1a2a;
+    padding:8px 16px;
+    border-radius:50px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,8vw,78px);
+    line-height:1.15;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#55e6ff;
+}
+
+.hero p{
+    max-width:700px;
+    margin:0 auto 35px;
+    color:#aebbd0;
+    font-size:20px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn-outline{
+    display:inline-block;
+    padding:13px 24px;
+    border:1px solid #31415d;
+    color:#fff;
+    border-radius:13px;
+    transition:.3s;
+}
+
+.btn-outline:hover{
+    border-color:#55e6ff;
+    color:#55e6ff;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#8997ad;
+}
+
+/* SERVICES */
+
+.cards{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:#101827;
+    border:1px solid #243149;
+    border-radius:22px;
+    padding:30px;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#55e6ff;
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#55e6ff;
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.card p{
+    color:#aab6c9;
+}
+
+/* PRICES */
+
+.price{
+    position:relative;
+}
+
+.price strong{
+    display:block;
+    font-size:32px;
+    margin:20px 0;
+    color:#fff;
+}
+
+.price ul{
+    list-style:none;
+    margin-bottom:25px;
+}
+
+.price li{
+    color:#b8c3d4;
+    margin:10px 0;
+}
+
+.price li::before{
+    content:"✓ ";
+    color:#55e6ff;
+    font-weight:bold;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:22px;
+}
+
+.project{
+    min-height:220px;
+    border-radius:22px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    background:
+    linear-gradient(135deg,#142943,#101827);
+    border:1px solid #263650;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:scale(1.02);
+}
+
+.project h3{
+    color:#55e6ff;
+    font-size:25px;
+}
+
+/* ABOUT */
+
+.about{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    color:#b3bfd1;
+    font-size:19px;
+}
+
+/* CONTACT */
+
+.contact-box{
+    text-align:center;
+    padding:60px 25px;
+    border-radius:28px;
+    background:
+    radial-gradient(circle at center,#16314c,#101827);
+    border:1px solid #29405b;
+}
+
+.contact-box h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.contact-box p{
+    color:#aebbd0;
+    margin-bottom:30px;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #202a40;
+    padding:35px 0;
+    text-align:center;
+    color:#718097;
+}
+
+/* MOBILE */
+
+.menu{
+    display:none;
+}
+
+@media(max-width:700px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+        color:#55e6ff;
+        font-size:25px;
+    }
+
+    .hero{
+        min-height:80vh;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    section{
+        padding:65px 0;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAV -->
+
+<nav>
+
+<div class="container nav-box">
+
+<div class="logo">
+ZOZ Web Studio
+</div>
+
+<div class="nav-links">
+
+<a href="#home">الرئيسية</a>
+<a href="#services">الخدمات</a>
+<a href="#prices">الأسعار</a>
+<a href="#portfolio">أعمالنا</a>
+<a href="#contact">تواصل</a>
+
+</div>
+
+<div class="menu">
+☰
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero" id="home">
+
+<div class="container hero-content">
+
+<div class="badge">
+🚀 نصمم مستقبلك الرقمي
+</div>
+
+<h1>
+موقعك يستحق
+<br>
+<span>تصميمًا احترافيًا</span>
+</h1>
+
+<p>
+نصمم مواقع ويب عصرية وسريعة ومتوافقة
+مع الهاتف والكمبيوتر للمشروعات والأعمال المختلفة.
+</p>
+
+<div class="buttons">
+
+<a class="btn"
+href="https://wa.me/201129920190"
+target="_blank">
+
+اطلب موقعك الآن 📲
+
+</a>
+
+<a class="btn-outline"
+href="#services">
+
+اكتشف خدماتنا
+
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>خدماتنا</h2>
+
+<p>
+كل ما تحتاجه لبناء وجود قوي على الإنترنت
+</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">🌐</div>
+
+<h3>تصميم المواقع</h3>
+
+<p>
+مواقع حديثة واحترافية تناسب
+الشركات والمحلات والمشروعات.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📱</div>
+
+<h3>تصميم متجاوب</h3>
+
+<p>
+الموقع يعمل بشكل ممتاز
+على الموبايل والتابلت والكمبيوتر.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">⚡</div>
+
+<h3>سرعة وأداء</h3>
+
+<p>
+نركز على إنشاء صفحات خفيفة
+وسريعة وسهلة الاستخدام.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🛠️</div>
+
+<h3>تعديل وصيانة</h3>
+
+<p>
+إضافة محتوى وتعديل الأقسام
+وتحديث الموقع عند الحاجة.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRICES -->
+
+<section id="prices">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>الباقات</h2>
+
+<p>
+أسعار مبدئية قابلة للتعديل حسب المشروع
+</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card price">
+
+<h3>🥉 Basic</h3>
+
+<strong>500 جنيه</strong>
+
+<ul>
+
+<li>صفحة واحدة</li>
+<li>تصميم متجاوب</li>
+<li>قسم خدمات</li>
+<li>زر واتساب</li>
+
+</ul>
+
+<a class="btn"
+href="https://wa.me/201129920190"
+target="_blank">
+
+اطلب الآن
+
+</a>
+
+</div>
+
+
+<div class="card price">
+
+<h3>🥈 Professional</h3>
+
+<strong>1,000 جنيه</strong>
+
+<ul>
+
+<li>عدة أقسام</li>
+<li>تصميم احترافي</li>
+<li>متوافق مع الهاتف</li>
+<li>معرض أعمال</li>
+<li>زر واتساب</li>
+
+</ul>
+
+<a class="btn"
+href="https://wa.me/201129920190"
+target="_blank">
+
+اطلب الآن
+
+</a>
+
+</div>
+
+
+<div class="card price">
+
+<h3>🥇 Business</h3>
+
+<strong>1,500 جنيه</strong>
+
+<ul>
+
+<li>موقع كامل</li>
+<li>تصميم مخصص</li>
+<li>صفحات متعددة</li>
+<li>رفع الموقع</li>
+<li>تعديلات أساسية</li>
+
+</ul>
+
+<a class="btn"
+href="https://wa.me/201129920190"
+target="_blank">
+
+اطلب الآن
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>أعمالنا</h2>
+
+<p>
+نماذج تجريبية من تصميم ZOZ Web Studio
+</p>
+
+</div>
+
+
+<div class="portfolio">
+
+
+<div class="project">
+
+<h3>🛍️ متجر إلكتروني</h3>
+
+<p>
+تصميم واجهة متجر عصرية.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<h3>🏢 شركة خدمات</h3>
+
+<p>
+صفحة تعريفية احترافية.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<h3>👨‍🏫 موقع مدرس</h3>
+
+<p>
+صفحة لعرض الدروس والخدمات.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>من نحن؟</h2>
+
+</div>
+
+<div class="about">
+
+<p>
+
+ZOZ Web Studio هو مشروع متخصص في
+إنشاء مواقع ويب عصرية وسريعة للمشروعات
+والأعمال الصغيرة.
+
+هدفنا هو تحويل فكرة العميل إلى موقع
+احترافي يمكنه استخدامه وعرضه لعملائه.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>
+جاهز تبدأ؟ 🔥
+</h2>
+
+<p>
+خلينا نحول فكرتك إلى موقع حقيقي.
+</p>
+
+<a class="btn"
+href="https://wa.me/201129920190"
+target="_blank">
+
+تواصل معي على واتساب 📱
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+© 2026 ZOZ Web Studio
+
+<br>
+
+تصميم وتطوير ZOZ Web Studio 🚀
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
